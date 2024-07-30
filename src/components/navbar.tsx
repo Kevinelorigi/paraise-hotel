@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
-import { MenuIcon } from 'lucide-react';
+import { MenuIcon, User } from 'lucide-react';
+
+import { Button } from './ui/button';
 
 import {
 	DropdownMenu,
@@ -12,7 +14,7 @@ import {
 
 export const Navbar = async () => {
 	return (
-		<nav className='flex flex-col items-center justify-between border-y p-4 shadow md:justify-around'>
+		<nav className='flex items-center justify-between border-y p-4 shadow md:justify-around'>
 			<Link
 				href='/'
 				className='text-wrap text-2xl font-extrabold tracking-tighter md:text-3xl'
@@ -31,22 +33,21 @@ export const Navbar = async () => {
 							<Link href='/'>Inicio</Link>
 						</DropdownMenuItem>
 						<DropdownMenuItem className='cursor-pointer' asChild>
-							<Link href='/'>Fragancias</Link>
+							<Link href='/'>Alquilar</Link>
 						</DropdownMenuItem>
 						<DropdownMenuItem className='cursor-pointer' asChild>
-							<Link href='/'>Notas</Link>
-						</DropdownMenuItem>
-						<DropdownMenuItem className='cursor-pointer' asChild>
-							<Link href='/'>Perfumistas</Link>
+							<Link href='/'>Habitaciones</Link>
 						</DropdownMenuItem>
 					</DropdownMenuContent>
 				</DropdownMenu>
 
 				<div className='hidden items-center gap-x-6 md:flex'>
 					<Link href='/'>Inicio</Link>
-					<Link href='/'>Fragancias</Link>
-					<Link href='/'>Notas</Link>
-					<Link href='/'>Perfumistas</Link>
+					<Link href='/'>Alquilar</Link>
+					<Link href='/'>Habitaciones</Link>
+					<Button>
+						<User />
+					</Button>
 				</div>
 			</div>
 		</nav>
